@@ -1,9 +1,5 @@
-require 'protected_attributes'
-
 module SpecialDelivery
   class Delivery < ActiveRecord::Base
-    attr_accessible :callback_class_name, :deliverable, :message_id
-
     belongs_to :deliverable, polymorphic: true
 
     validates :callback_class_name, :message_id, :presence => true

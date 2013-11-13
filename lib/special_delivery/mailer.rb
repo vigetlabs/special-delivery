@@ -5,10 +5,11 @@ module SpecialDelivery
 
       yield.tap do |mail|
         if mail && callback_class
-          Delivery.create(
-            :callback_class_name => callback_class.to_s,
-            :deliverable         => params[:callback_record],
-            :message_id          => message_id_for(mail))
+          Delivery.new.tap do |delivery|
+            delivery.callback_class_name = callback_class.to_s
+            delivery.deliverable = params[:callback_record] if params[:callback_record]
+            delivery.message_id = message_id_for(mail)
+          end.save
         end
       end
     end
