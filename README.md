@@ -52,7 +52,7 @@ class LotteryMailer < ActionMailer::Base
   ...
 ```
 
-Within your mailer's methods, pass your `mail` method calls into `special_delivery` as a block.
+Within your mailer's methods, pass your `mail` method calls into `special_delivery` as a block. Pass the `special_delivery` method call a hash containing at least your callback class (at `:callback_class` of course). You may optionally provide an ActiveRecord object for `:callback_record` that will be passed into your callback method as an argument.
 
 ```ruby
 def winner_email(user)
