@@ -1,3 +1,3 @@
 SpecialDelivery::Engine.routes.draw do
-  root to: 'events#create'
+  post "/" => "events#create", :as => "root"
 end
