@@ -4,7 +4,7 @@ module SpecialDelivery
     private
 
     def callback_method
-      :delivery
+      :delivered
     end
   end
 end

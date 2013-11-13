@@ -4,7 +4,7 @@ module SpecialDelivery
     private
 
     def callback_method
-      :bounce
+      :bounced
     end
   end
 end

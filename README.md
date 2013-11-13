@@ -22,15 +22,23 @@ mount SpecialDelivery::Engine => "/email_events"
 ```
 
 ### Your Custom Callback Class File
-Create a new class to handle callbacks initiated by Mailgun POST requests made to your app.  Callbacks for the specific types of Mailgun events should be defined as class methods on your class. Your class can respond to as many or as few of Mailgun's event types as you would like. Event types include `bounce`, `click`, `complaint`, `delivery`, `drop`, `open`, and `unsubscribe`.
+Create a new class to handle callbacks initiated by Mailgun POST requests made to your app.  Callbacks for the specific types of Mailgun events should be defined as methods within your class. Your class can respond to as many or as few of Mailgun's event types as you would like. Event types include `bounced`, `clicked`, `complained`, `delivered`, `dropped`, `opened`, and `unsubscribed`.
 
 So if we want a callback class to manage sending a message to an admin when our lotter winner emails bounce, we would write:
 
 ```ruby
-class LotterEmailCallbacks::Winner
-  def self.bounce(user)
+class LotterEmail::WinnerCallback < SpecialDelivery::Callback
+  def bounced(user)
   	send_message_to_admin "#{user.name} did not receive lottery winner email."
   end
+end
+```
+
+And if we wanted to send a different message to the admin when the email was opened, we could add a method to the callback class:
+
+```ruby
+def opened(user)
+ send_message_to_admin "#{user.name} just opened their lottery winner email."
 end
 ```
 

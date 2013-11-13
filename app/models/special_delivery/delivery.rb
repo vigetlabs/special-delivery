@@ -9,14 +9,7 @@ module SpecialDelivery
     validates :callback_class_name, :message_id, :presence => true
 
     def callback(event_type)
-      return unless callback_class
-
-      if deliverable.present?
-        callback_class.send(event_type, deliverable)
-      else
-        callback_class.send(event_type)
-      end
-    rescue NoMethodError
+      callback_class.send(event_type, deliverable) if callback_class
     end
 
     private

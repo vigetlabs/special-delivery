@@ -16,27 +16,27 @@ describe SpecialDelivery::Delivery do
 
     context "when a callback class exists" do
       before do
-        CallbackClass = Class.new
+        CallbackClass = Class.new(SpecialDelivery::Callback)
       end
 
       context "and responds to the callback method" do
         before do
           CallbackClass.class_eval do
-            define_singleton_method(:bounce) {}
+            define_method(:bounced) {|deliverable| 'bounced'}
           end
         end
 
         it "sends the callback message to the callback class" do
-          CallbackClass.should_receive(:bounce).with(deliverable)
+          CallbackClass.should_receive(:bounced).with(deliverable)
 
-          subject.callback(:bounce)
+          subject.callback(:bounced)
         end
       end
 
       context "but does not respond to the callback method" do
         it "does not raise an error" do
           expect {
-            subject.callback(:complaint)
+            subject.callback(:complained)
           }.to_not raise_error
         end
       end
@@ -45,7 +45,7 @@ describe SpecialDelivery::Delivery do
     context "when no callback class exists" do
       it "does not raise an error" do
         expect {
-          subject.callback(:bounce)
+          subject.callback(:bounced)
         }.to_not raise_error
       end
     end

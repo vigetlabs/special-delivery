@@ -1,12 +1,12 @@
 require 'pry'
 
 module EmailCallback
-  class SomeEmail
-    def self.bounce
+  class SomeEmail < SpecialDelivery::Callback
+    def bounced
       'bounce event callback'
     end
 
-    def self.open
+    def opened
       'open event callback'
     end
   end

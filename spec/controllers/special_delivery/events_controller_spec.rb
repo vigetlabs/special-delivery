@@ -29,7 +29,7 @@ describe SpecialDelivery::EventsController do
         end
 
         it "calls the callback specified by the delivery Object and event type" do
-          EmailCallback::SomeEmail.should_receive(:open)
+          EmailCallback::SomeEmail.should_receive(:opened)
 
           post :create, params.merge({ :use_route => :special_delivery })
         end
