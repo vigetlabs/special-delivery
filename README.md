@@ -15,7 +15,7 @@ So by using Special Delivery when sending out a lottery-winner email, the applic
 
 ## Use
 ### Routes File
-Mount Special Delivery as an engine within your `config/routes.rb` at a path of your choosing.
+Mount Special Delivery as an engine within your `config/routes.rb` at a path of your choosing. Make sure to then point your Mailgun webhooks to this URL.
 
 ```ruby
 mount SpecialDelivery::Engine => "/email_events"
@@ -24,12 +24,12 @@ mount SpecialDelivery::Engine => "/email_events"
 ### Your Custom Callback Class File
 Create a new class to handle callbacks initiated by Mailgun POST requests made to your app.  Callbacks for the specific types of Mailgun events should be defined as methods within your class. Your class can respond to as many or as few of Mailgun's event types as you would like. Event types include `bounced`, `clicked`, `complained`, `delivered`, `dropped`, `opened`, and `unsubscribed`.
 
-So if we want a callback class to manage sending a message to an admin when our lotter winner emails bounce, we would write:
+So if we want a callback class to manage sending a message to an admin when our lottery winner emails bounce, we would write:
 
 ```ruby
-class LotterEmail::WinnerCallback < SpecialDelivery::Callback
+class LotteryEmail::WinnerCallback < SpecialDelivery::Callback
   def bounced(user)
-  	send_message_to_admin "#{user.name} did not receive lottery winner email."
+  	send_message_to_admin "#{user.name} did not receive their lottery winner email."
   end
 end
 ```
@@ -43,7 +43,7 @@ end
 ```
 
 ### Mailer Files
-Include the Mailer helper module in your mailer class (e.g. `app/mailers/lotter_mailer.rb` if you wanted to use Special Delivery in your LotterMailer.
+Include the Mailer helper module in your mailer class (e.g. `app/mailers/lottery_mailer.rb` if you wanted to use Special Delivery in your LotteryMailer.
 
 ```ruby
 class LotteryMailer < ActionMailer::Base
@@ -57,7 +57,7 @@ Within your mailer's methods, pass your `mail` method calls into `special_delive
 ```ruby
 def winner_email(user)
   special_delivery(
-    :callback_class  => LotterEmailCallbacks::Winner,
+    :callback_class  => LotteryEmail::WinnerCallback,
     :callback_record => user
   ) do
   	mail(:to => user.email, :subject => 'All the Monies!')
