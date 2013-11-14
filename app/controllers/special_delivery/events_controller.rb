@@ -2,6 +2,8 @@ require_dependency "special_delivery/application_controller"
 
 module SpecialDelivery
   class EventsController < ApplicationController
+    skip_before_filter :verify_authenticity_token
+
     before_filter :ensure_authenticity
 
     rescue_from ActiveRecord::RecordNotFound,
