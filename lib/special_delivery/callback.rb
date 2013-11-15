@@ -1,5 +1,3 @@
-require 'pry'
-
 module SpecialDelivery
   class Callback
     def bounced(*args); end

@@ -1,5 +1,3 @@
-require 'pry'
-
 module EmailCallback
   class SomeEmail < SpecialDelivery::Callback
     def bounced
