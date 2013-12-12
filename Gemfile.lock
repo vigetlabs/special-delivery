@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    special_delivery (0.0.1)
+    special_delivery (0.1.0)
       rails
 
 GEM

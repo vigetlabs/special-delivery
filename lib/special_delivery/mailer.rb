@@ -1,6 +1,6 @@
 module SpecialDelivery
   module Mailer
-    def special_delivery(params = {}, &block)
+    def special_delivery(params = {})
       callback_class = params[:callback_class]
 
       yield.tap do |mail|

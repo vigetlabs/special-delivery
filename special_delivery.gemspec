@@ -5,13 +5,13 @@ require "special_delivery/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "special_delivery"
+  s.name        = "special-delivery"
   s.version     = SpecialDelivery::VERSION
   s.authors     = ["Lawson Kurtz"]
   s.email       = ["lawson.kurtz@viget.com"]
-  s.homepage    = "http://viget.com"
-  s.summary     = "Summary of SpecialDelivery."
-  s.description = "Description of SpecialDelivery."
+  s.homepage    = "https://github.com/vigetlabs/special-delivery"
+  s.summary     = "A Mailgun Webhook Event Manager"
+  s.description = "Special Delivery is a Rails engine that enables powerful and easy-to-use callbacks in response to Mailgun events POSTed via webhook."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 

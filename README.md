@@ -12,6 +12,12 @@ Special Delivery saves a reference to each outgoing email messages to recreate s
 
 So by using Special Delivery when sending out a lottery-winner email, the application is then able to listen for bounce events for that particular email, and evaluate a callback with knowlege of the user record to which the email was originally sent.
 
+## Installation
+You know the drill. Add the gem to your Gemfile.
+
+```ruby
+gem 'special-delivery'
+```
 
 ## Use
 ### Routes File
