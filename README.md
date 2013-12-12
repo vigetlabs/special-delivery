@@ -1,3 +1,4 @@
+[![Code Climate](https://codeclimate.com/github/vigetlabs/special-delivery.png)](https://codeclimate.com/github/vigetlabs/special-delivery)
 # Special Delivery
 
 __A Mailgun Webhook Event Manager__
