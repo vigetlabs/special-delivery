@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["lawson.kurtz@viget.com"]
   s.homepage    = "https://github.com/vigetlabs/special-delivery"
   s.summary     = "A Mailgun Webhook Event Manager"
+  s.license     = 'MIT'
   s.description = "Special Delivery is a Rails engine that enables powerful and easy-to-use callbacks in response to Mailgun events POSTed via webhook."
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
