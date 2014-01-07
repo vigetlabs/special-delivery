@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    special_delivery (0.1.0)
+    special-delivery (0.1.2)
       rails
 
 GEM
@@ -96,7 +96,7 @@ GEM
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
     slop (3.4.6)
-    sprockets (2.10.0)
+    sprockets (2.10.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -126,4 +126,4 @@ DEPENDENCIES
   rspec-rails
   shoulda-matchers
   simplecov
-  special_delivery!
+  special-delivery!
