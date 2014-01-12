@@ -7,7 +7,7 @@ Special Delivery is a Rails engine that enables powerful and easy-to-use callbac
 
 Say what now? Example time:
 
-Let's say you have an application that sends an email to notify a user that they have won the lottery. This email is obviously pretty important, so we'd like to send a message to an admin if the lotter-winner email bounces. How the heck do we do that?
+Let's say you have an application that sends an email to notify a user that they have won the lottery. This email is obviously pretty important, so we'd like to send a message to an admin if the lottery-winner email bounces. How the heck do we do that?
 
 Special Delivery saves a reference to each outgoing email messages to recreate state when Mailgun informs your application that a particular event occured for that message.
 
