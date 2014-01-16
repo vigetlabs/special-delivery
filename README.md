@@ -22,6 +22,10 @@ gem 'special-delivery'
 ```
 
 ## Use
+
+### Set Your API Key
+Your mailgun API key is used to authenticate webhook requests from Mailgun, and must be accessible via `MAILGUN_CONFIG[:api_key]`.
+
 ### Routes File
 Mount Special Delivery as an engine within your `config/routes.rb` at a path of your choosing. Make sure to then point your Mailgun webhooks to this URL.
 
