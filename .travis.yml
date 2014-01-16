@@ -1,0 +1,8 @@
+language: ruby
+script: "bundle exec rspec"
+before_script:
+  - mysql -e 'create database dummy_test;'
+  - bundle exec rake db:migrate RAILS_ENV=test
+rvm:
+  - 1.9.3
+  - 2.0.0

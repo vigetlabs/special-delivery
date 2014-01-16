@@ -22,12 +22,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   adapter: mysql2
-  encoding: utf8
   database: dummy_test
-  pool: 5
-  username: root
-  password: mysqlsucks
-  socket: /tmp/mysql.sock
+  username: travis
+  encoding: utf8
 
 production:
   adapter: mysql2
