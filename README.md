@@ -1,5 +1,6 @@
-[![Code Climate](https://codeclimate.com/github/vigetlabs/special-delivery.png)](https://codeclimate.com/github/vigetlabs/special-delivery)
+[![Code Climate](https://codeclimate.com/github/vigetlabs/special-delivery.png)](https://codeclimate.com/github/vigetlabs/special-delivery) [![Coverage Status](https://coveralls.io/repos/vigetlabs/special-delivery/badge.png?branch=master)](https://coveralls.io/r/vigetlabs/special-delivery?branch=master) [![Build Status](https://travis-ci.org/vigetlabs/special-delivery.png?branch=master)](https://travis-ci.org/vigetlabs/special-delivery) [![Gem Version](https://badge.fury.io/rb/special-delivery.png)](http://badge.fury.io/rb/special-delivery)
 # Special Delivery
+
 
 __A Mailgun Webhook Event Manager__
 
