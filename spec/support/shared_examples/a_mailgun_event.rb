@@ -1,7 +1,7 @@
 shared_examples "a Mailgun event" do
   describe "#issue_callback" do
     context "if a message-id is provided" do
-      subject { described_class.new('Message-Id' => '<123@test.com>') }
+      subject { described_class.new('message-id' => '<123@test.com>') }
 
       context "if a Delivery is found with the provided message id" do
         let(:delivery) { double('delivery') }

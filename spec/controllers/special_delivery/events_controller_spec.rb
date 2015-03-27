@@ -5,7 +5,7 @@ describe SpecialDelivery::EventsController do
     context "with valid authenticity parameters" do
       let(:params) {
         {
-          "Message-Id" => "<abc123@test.com>",
+          "message-id" => "<abc123@test.com>",
           "event"      => "opened",
           "token"      => "mailgun-token",
           "timestamp"  => "1234567890",
@@ -45,7 +45,7 @@ describe SpecialDelivery::EventsController do
     context "with invalid authenticity parameters" do
       let(:params) {
         {
-          "Message-Id" => "<abc123@test.com>",
+          "message-id" => "<abc123@test.com>",
           "event"      => "opened",
           "token"      => "mailgun-token",
           "timestamp"  => "1234567890",
