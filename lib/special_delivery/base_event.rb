@@ -17,7 +17,7 @@ module SpecialDelivery
     end
 
     def delivery
-      @delivery ||= Delivery.find_by_message_id!(params.fetch('Message-Id'))
+      @delivery ||= Delivery.find_by_message_id!(params.fetch('message-id'))
     end
   end
 end
